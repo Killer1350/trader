@@ -1287,14 +1287,7 @@ function friendlyAiError(message) {
   return text || "The AI engine could not complete the request.";
 }
 
-function readFileAsDataUrl(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = () => reject(new Error("Unable to read the selected image."));
-    reader.readAsDataURL(file);
-  });
-}
+
 
 async function callOpenAI(payload) {
   const response = await fetch("/api/openai", {
